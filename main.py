@@ -52,3 +52,22 @@ class Spot:
     def reset(self):
         self.color == WHITE
     
+    def make_closed(self):
+        self.color = RED
+    
+    def make_open(self):
+        self.color = GREEN
+    
+    def make_barrier(self):
+        self.color = BLACK
+    
+    def make_end(self):
+        self.color = PURPLE
+
+    def make_path(self):
+        self.color = TURQUOISE
+    
+    def draw(self, win):
+        pygame.draw.rect(win, self.color, ())
+
+    
