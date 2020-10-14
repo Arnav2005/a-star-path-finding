@@ -3,7 +3,7 @@ import math
 from queue import PriorityQueue
 
 WIDTH = 600
-WIN = pygame.display.set_mode((WIDTH, WIDTH)) # Creating a window of size 800 x 800
+WIN = pygame.display.set_mode((WIDTH, WIDTH)) # creating a window of size 800 x 800
 pygame.display.set_caption("A* path finding algorithm") # setting a title "A* path finding algorithm"
 
 ##############################
@@ -68,6 +68,17 @@ class Spot:
         self.color = TURQUOISE
     
     def draw(self, win):
-        pygame.draw.rect(win, self.color, ())
+        pygame.draw.rect(win, self.color, (self.x, self.y, self.width, self.width)) # drawing some rectangles 
+    
+    def update_neightbor(self, grid):
+        pass
 
+    def __lt__(self, other): # lt stands for less than
+        return False
+
+def h(p1, p2):
+    x1, y1 = p1
+    x2, y2 = p2
+    return abs(x1 - x2) + abs(y1 - y2)
+    
     
